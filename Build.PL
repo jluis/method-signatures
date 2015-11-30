@@ -50,5 +50,6 @@ my $build = Module::Build->new(
             repository  => 'https://github.com/evalEmpire/method-signatures',
         },
     },
+    create_readme => 1,
 );
 $build->create_build_script;
