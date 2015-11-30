@@ -1,12 +1,11 @@
-'''perl
+```perl
 # NAME
 
-    Method::Signatures - method and function declarations with signatures
-    and no source filter
+Method::Signatures - method and function declarations with signatures and no source filter
 
 # VERSION
 
-    20141021
+20141021
 
 # SYNOPSIS
 
@@ -26,23 +25,15 @@
 
 # DESCRIPTION
 
-    Provides two new keywords, func and method, so that you can write
-    subroutines with signatures instead of having to spell out my $self =
-    shift; my($thing) = @_
+Provides two new keywords, func and method, so that you can write subroutines with signatures instead of having to spell out my ```$self = shift; my($thing) = @_
 
-    func is like sub but takes a signature where the prototype would
-    normally go. This takes the place of my($foo, $bar) = @_ and does a
-    whole lot more.
+func is like sub but takes a signature where the prototype would normally go. This takes the place of my($foo, $bar) = @_ and does a whole lot more.
 
-    method is like func but specifically for making methods. It will
-    automatically provide the invocant as $self (by default). No more my
-    $self = shift.
+method is like func but specifically for making methods. It will automatically provide the invocant as $self (by default). No more my $self = shift.
 
 # INSTALLATION
 
-    This module sources are hosted on github
-    https://github.com/evalEmpire/method-signatures.git and uses
-    Module::Build to generate the distribution. It can be istalled:
+This module sources are hosted on github https://github.com/evalEmpire/method-signatures.git and uses Module::Build to generate the distribution. It can be istalled:
 
 - directly
 
