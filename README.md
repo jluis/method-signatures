@@ -1,4 +1,3 @@
-```perl
 # NAME
 
 Method::Signatures - method and function declarations with signatures and no source filter
@@ -8,6 +7,7 @@ Method::Signatures - method and function declarations with signatures and no sou
 20141021
 
 # SYNOPSIS
+```perl
 
         package Foo;
     
@@ -22,10 +22,10 @@ Method::Signatures - method and function declarations with signatures and no sou
         method set (Str $key, Int $val) {
             return $self->{$key} = $val;        # now you know $val is always an integer
         }
-
+```
 # DESCRIPTION
 
-Provides two new keywords, func and method, so that you can write subroutines with signatures instead of having to spell out my ```$self = shift; my($thing) = @_
+Provides two new keywords, func and method, so that you can write subroutines with signatures instead of having to spell out my $self = shift; my($thing) = @_
 
 func is like sub but takes a signature where the prototype would normally go. This takes the place of my($foo, $bar) = @_ and does a whole lot more.
 
