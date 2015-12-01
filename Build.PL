@@ -11,7 +11,7 @@ my $build = Module::Build->new(
     recursive_test_files => 1,
 
     configure_requires => {
-        'Module::Build'     => '0.26',
+        'Module::Build'     => '0.31',
     },
 
     build_requires      => {
@@ -51,5 +51,6 @@ my $build = Module::Build->new(
         },
     },
     create_readme => 1,
+    create_license => 1,
 );
 $build->create_build_script;
