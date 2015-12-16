@@ -11,6 +11,7 @@ my $class = Module::Build->subclass(
 sub ACTION_distmeta{
     my ($self) = @_;
     if (eval {require Pod::Readme; Pod::Readme->can('new') } ){
+        $self->delete_filetree('README');
         my $prf = Pod::Readme->new(
             target      => 'readme',
             base_dir    => '.',
@@ -18,6 +19,7 @@ sub ACTION_distmeta{
             output_file => 'README.pod',
         );
         $prf->run();
+	$self->_add_to_manifest('MANIFEST', 'README.pod');
     }
     $self->SUPER::ACTION_distmeta;
 };
