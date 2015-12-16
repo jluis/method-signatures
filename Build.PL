@@ -4,7 +4,27 @@ use 5.008001;
 
 use Module::Build;
 
-my $build = Module::Build->new(
+my $class = Module::Build->subclass(
+    class => 'Module::Build::Custom',
+    code  => <<'SUBCLASS');
+
+sub ACTION_distmeta{
+    my ($self) = @_;
+    if (eval {require Pod::Readme; Pod::Readme->can('new') } ){
+        my $prf = Pod::Readme->new(
+            target      => 'readme',
+            base_dir    => '.',
+            input_file  => $self->_main_docfile,
+            output_file => 'README.pod',
+        );
+        $prf->run();
+    }
+    $self->SUPER::ACTION_distmeta;
+};
+   
+SUBCLASS
+
+my $build = $class->new(
     module_name     => 'Method::Signatures',
     license         => 'perl',
 
